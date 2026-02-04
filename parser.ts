@@ -54,8 +54,12 @@ export interface ClassItem extends BaseItem { items: Array<ClassMemberConstructo
 export type ParsedItem = VariableItem | FunctionItem | ClassItem | InterfaceItem | TypeAliasItem | EnumItem | NamespaceItem
 
 function getJsDocText(node: any): string {
-  return (node.getJsDocs?.() ?? []).map((d: any) => d.getDescription?.() ?? d.getComment?.() ?? "").filter(Boolean).join("\n").trim()
+  return (node.getJsDocs?.() ?? [])
+    .map((d: any) => d.getInnerText())
+    .join("\n")
+    .trim();
 }
+
 function literalValueText(init: any) {
   if (!init) return undefined
   const k = init.getKind?.() ?? init.kind
