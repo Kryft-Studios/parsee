@@ -1,7 +1,7 @@
 {
   "name": "@briklab/parsee",
-  "version": "0.1.2",
-  "description": "Compact ts-morph-based parser that summarizes top-level exports and TypeScript type ASTs as JSON.",
+  "version": "1.0.0",
+  "description": "Compact ts-morph-based parser that summarizes top-level exports and TypeScript type ASTs as JSON[].",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": ["dist"],
